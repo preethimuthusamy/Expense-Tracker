@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Expense Tracker</title>
+</head>
+<body>
+{% macro input(name, type='text', value='') %}
+<input type='{{type}}' name='{{name}}' value='{{value}}' required />
+{% endmacro %}
+<form name='registerForm' action="/regiter" method="post">
+<table>
+<tr>
+<td>Name</td>
+<td>{{ input('name')}}</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>{{ input('username')}}</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>{{ input('password',type='password')}}</td>
+</tr>
+<tr>
+<td>Re-type Password</td>
+<td>{{ input('confpassword',type='password')}}</td>
+</tr>
+<tr>
+<td>Gender</td>
+<td>{{ input('gender',type='radio', value='Male')}}Male
+{{input('gender',type='radio', value='Female')}}Female
+{{input('gender',type='radio', value='Other')}}Other</td>
+</tr>
+<tr>
+<td>Contact No</td>
+<td>{{ input('contact')}}</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>{{ input('email',type='email')}}</td>
+</tr>
+<tr>
+<td>Total salary</td>
+<td>{{ input('salary')}}</td>
+</tr>
+    <tr>
+<td>Food cost</td>
+<td>{{ input('food')}}</td>
+</tr>
+    <tr>
+<td>clothing</td>
+<td>{{ input('clothing')}}</td>
+</tr>
+    <tr>
+<td>EB bill</td>
+<td>{{ input('eb')}}</td>
+</tr>
+    <tr>
+<td>loan</td>
+<td>{{ input('loan')}}</td>
+</tr>
+    <tr>
+<td>rent</td>
+<td>{{ input('rent')}}</td>
+</tr>
+
+
+<tr>
+<td colspan="2" align=center>{{ input('submit',type='submit',
+value="submit")}}</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
